@@ -10,7 +10,7 @@ const assertEqual = function(actual, expected) {
 // Tail Function
 
 const tail = function(array) {
-  return array.slice(1);
+  return array.slice(1); // Starts array at 1, cuts [0]
 };
 // Test Case: Check the original array
 
