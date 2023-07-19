@@ -61,7 +61,7 @@ const middle = function(array) {
 
 
 
-// *** Test ***
+// *** Test ****
 
 /*For arrays with one or two elements, there is no middle. Return an empty array. */
 assertArraysEqual(middle([1]), []); // => []
