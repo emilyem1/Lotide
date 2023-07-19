@@ -60,15 +60,24 @@ const flatten = function(nestedArray) {
 
 // Test if funtion will flatten a nested array
 assertArraysEqual(flatten([1, 2, 3, [4, 5]]), [1, 2, 3, 4, 5]);
+// ✅ ✅ ✅ Assertion Passed: 1,2,3,4,5 === 1,2,3,4,5
 
 // Test if function will flatten two nested array
 assertArraysEqual(flatten([1, 2, 3, [4, 5], [6]]), [1, 2, 3, 4, 5, 6]);
+// ✅ ✅ ✅ Assertion Passed: 1,2,3,4,5,6 === 1,2,3,4,5,6
 
 //Test if function will flatten a nested array within a nested array
 assertArraysEqual(flatten([1, [2, 3, [4, 5]]]), [1, 2, 3, 4, 5]);
+// ✅ ✅ ✅ Assertion Passed: 1,2,3,4,5 === 1,2,3,4,5
 
 //Test if function is pushing anything into array without a nested array
 assertArraysEqual(flatten([1, 2]), [1, 2]);
+// ✅ ✅ ✅ Assertion Passed: 1,2 === 1,2
 
 //Test how function reacts with empty array
 assertArraysEqual(flatten([]), [1, 2, 3, 4]);
+// ❌ ❌ ❌ Assertion Failed:  !== 1,2,3,4
+
+//Test how function reacts with strings
+assertArraysEqual(flatten(["Hello", "My", ["Name", "Is"]]), [1, 2, 3, 4]);
+// ❌ ❌ ❌ Assertion Failed: Hello,My,Name,Is !== 1,2,3,4
