@@ -36,7 +36,7 @@ Things to do:
 
 const without = function(sourceArray, itemsToRemove) {
   if (!itemsToRemove || !itemsToRemove.length) {  /* If there is no itemToRemove or no length */
-    return "\u274C Need a match!"; 
+    return "\u274C Provide an item to remove"; 
   }
   for (let i = 0; i < sourceArray.length; i++) { // Loop through source 
     if (itemsToRemove.includes(sourceArray[i])) { // If it includes a match
