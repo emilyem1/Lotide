@@ -36,20 +36,20 @@ Things to do:
 
 const without = function(sourceArray, itemsToRemove) {
   if (!itemsToRemove || !itemsToRemove.length) {  /* If there is no itemToRemove or no length */
-    return "\u274C Provide an item to remove"; 
+    return "\u274C Provide an item to remove";
   }
-  for (let i = 0; i < sourceArray.length; i++) { // Loop through source 
+  for (let i = 0; i < sourceArray.length; i++) { // Loop through source
     if (itemsToRemove.includes(sourceArray[i])) { // If it includes a match
-      sourceArray.splice(i, 1) // Splice the match by 1
-    } 
+      sourceArray.splice(i, 1); // Splice the match by 1
+    }
   }
-  return sourceArray; 
-}
+  return sourceArray;
+};
 
 
 // *** Test for without function ***
-console.log(without([1, 2, 3])) // => [Need a match!]
-console.log(without(["1", "2", "3"], [1, 2, "3"])) // => ["1", "2"]
+console.log(without([1, 2, 3])); // => [Need a match!]
+console.log(without(["1", "2", "3"], [1, 2, "3"])); // => ["1", "2"]
 
 // **** Test using assertArraysEqual ****
 
@@ -58,8 +58,8 @@ const result1 = without([1, 2, 3, 4, 5], [2, 4]);
 assertArraysEqual(result1, [1, 3, 5]); // Expected output: [1, 3, 5]
 
 // Test case for removing elements that do not exist in sourceArray:
-const result2 = without([1, 2, 3], [4, 5]); 
-assertArraysEqual(result2, [1, 2, 3]); // Expected output: [1, 2, 3] 
+const result2 = without([1, 2, 3], [4, 5]);
+assertArraysEqual(result2, [1, 2, 3]); // Expected output: [1, 2, 3]
 
 // Test case for removing elements when sourceArray is empty:
 const result3 = without([], [1, 2, 3]);
