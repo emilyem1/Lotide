@@ -27,24 +27,24 @@ const assertEqual = function(actual, expected) {
 // countLetters function !!!
 
 const countLetters = function(string) {
-  let results = {}; // Empty result to populate 
+  let results = {}; // Empty result to populate
   let lower = string.toLowerCase(); /* Make the string all the same type of letter */
-  let removeSpaces = lower.replaceAll(" ", "") // Remove the spaces
+  let removeSpaces = lower.replaceAll(" ", ""); // Remove the spaces
   for (const letters of removeSpaces) { /* removeSpaces now updated version of string with no spaces and all lowercase. now loop through */
     if (results[letters]) { // if the results {}
       results[letters] += 1; // already has the letter, +1
     } else {
       results[letters] = 1; // populate {} with a count of 1
-    } 
+    }
   }
   return results;
 };
 
-// Test 
+// Test
 
 // Checks that the function doesn't count capitals or spaces
-console.log(countLetters("Hello how are you")); 
+console.log(countLetters("Hello how are you"));
 
-// Checks that no errors are thrown when numbers are in string 
+// Checks that no errors are thrown when numbers are in string
 console.log(countLetters("HAha hahaha 1"));
 
