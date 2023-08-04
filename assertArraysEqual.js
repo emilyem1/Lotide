@@ -1,17 +1,4 @@
-// A function that takes in two arrays and returns true or false
-
-const eqArrays = function(arrayOne, arrayTwo) {
-  if (arrayOne.length !== arrayTwo.length) { //First compare the length
-    return false; // Not the same length then false
-  } else { // If they are the same length
-    for (let i = 0; i < arrayOne.length; i++) { /* Loop through arrays, and since they are def the same length now, there is no error */
-      if (arrayOne[i] !== arrayTwo[i]) { /* Check if the arrays contain the same contents */
-        return false;
-      }
-    }
-    return true; // If all of this is a no, then true!
-  }
-};
+const eqArrays = require('../lotide/eqArrays');
 
 /*
  Goal: Take in two arrays and console.log an appropriate message to the console.
@@ -26,9 +13,4 @@ const assertArraysEqual = function(arrayOne, arrayTwo) { // Take in two arrays
   }
 };
 
-// Test
-assertArraysEqual([1, 2, 3], [1, 2, 3]); // true
-assertArraysEqual([1, 2, 3], [1, 2, 4]); // false
-assertArraysEqual(['a', 'b', 'c'], ['a', 'b', 'c']); // true
-assertArraysEqual(['a', 'b', 'c'], ['a', 'b', 'd']); // false
-assertArraysEqual([1, 2, 3], ['1', '2', '3']); // false
+module.exports = assertArraysEqual;
