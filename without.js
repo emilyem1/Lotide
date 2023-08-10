@@ -17,6 +17,8 @@ const eqArrays = function(arrayOne, arrayTwo) {
 Funtion that utilizes eqArrays to take in two arrays and log an appropriate message to the console.
  */
 
+
+
 const assertArraysEqual = function(arrayOne, arrayTwo) { // Take in two arrays
   const result = eqArrays(arrayOne, arrayTwo); // Calls on function to compare
   if (result === true) { // If results are true
@@ -35,15 +37,19 @@ Things to do:
 */
 
 const without = function(sourceArray, itemsToRemove) {
-  if (!itemsToRemove || !itemsToRemove.length) {  /* If there is no itemToRemove or no length */
-    return "\u274C Provide an item to remove";
+  if (!itemsToRemove || !itemsToRemove.length) { /* If there is no itemToRemove or no length */
+    return "\u274C Provide items to remove";
   }
+  
+  let filteredArray = []; // Establish array to push into 
+  
   for (let i = 0; i < sourceArray.length; i++) { // Loop through source
-    if (itemsToRemove.includes(sourceArray[i])) { // If it includes a match
-      sourceArray.splice(i, 1); // Splice the match by 1
+    if (!itemsToRemove.includes(sourceArray[i])) { // If there is no match
+      filteredArray.push(sourceArray[i]); // Push into new array
     }
   }
-  return sourceArray;
+  
+  return filteredArray;
 };
 
 
