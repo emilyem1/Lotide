@@ -1,14 +1,3 @@
-// **** SET UP ****
-
-// assertEqual function: tells if two elements are ===
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`\u2705 \u2705 \u2705 Assertion Passed: ${actual} === ${expected}`); // Used the Unicode representation for the green check
-  } else {
-    console.log(`\u274C \u274C \u274C Assertion Failed: ${actual} !== ${expected}`); // Used the Unicode representation for the red x
-  }
-};
-
 /* Goal: Function should take in a sentence (as a string) and then return a count of each of the letters in that sentence. */
 
 /* Main Question: How to count letters in a string and return that count */
@@ -40,11 +29,4 @@ const countLetters = function(string) {
   return results;
 };
 
-// Test
-
-// Checks that the function doesn't count capitals or spaces
-console.log(countLetters("Hello how are you"));
-
-// Checks that no errors are thrown when numbers are in string
-console.log(countLetters("HAha hahaha 1"));
-
+module.exports = countLetters;
