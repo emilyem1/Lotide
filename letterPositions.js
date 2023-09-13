@@ -1,34 +1,4 @@
-// **** SET UP ****
-
-// function that uses eqArrays if to determine === and returns a message
-
-const assertArraysEqual = function(arrayOne, arrayTwo) { // Take in two arrays
-  const result = eqArrays(arrayOne, arrayTwo); // Calls on function to compare
-  if (result === true) { // If results are true
-    console.log(`\u2705 \u2705 \u2705 Assertion Passed: ${arrayOne} === ${arrayTwo}`); // Used the Unicode representation for the green check
-  } else { // If results are false
-    console.log(`\u274C \u274C \u274C Assertion Failed: ${arrayOne} !== ${arrayTwo}`); // Used the Unicode representation for the red x
-  }
-};
-
-// function that takes in two arrays and returns true or false
-
-const eqArrays = function(arrayOne, arrayTwo) {
-  if (arrayOne.length !== arrayTwo.length) { //First compare the length
-    return false; // Not the same length then false
-  } else { // If they are the same length
-    for (let i = 0; i < arrayOne.length; i++) { /* Loop through arrays, and since they are def the same length now, there is no error */
-      if (arrayOne[i] !== arrayTwo[i]) { /* Check if the arrays contain the same contents */
-        return false;
-      }
-    }
-    return true; // If all of this is a no, then true!
-  }
-};
-
 /* Goal: function which will return all the indices (zero-based positions) in the string where each character is found. For each letter, instead of returning just one number to represent its number of occurrences, multiple numbers may be needed to represent all the places in the string that it shows up.*/
-
-/* Main question: How to  print the letters in a sentence as positions */
 
 /*
 * Strategy:
@@ -41,8 +11,6 @@ const eqArrays = function(arrayOne, arrayTwo) {
 * 7) Else just record the one position
 * 8) Return the now populated object
 */
-
-// letterPositions function !!!!
 
 const letterPositions = function(sentence) {
   const results = {}; // Empty object to push results into
@@ -62,14 +30,4 @@ const letterPositions = function(sentence) {
   return results;
 };
 
-
-// Test Code
-
-// Testing if function is adding both positions
-assertArraysEqual(letterPositions("hello").l, [2, 3]);
-
-// Testing if function is converting capitals to lowercase
-assertArraysEqual(letterPositions("HIhey").h, [0, 2]);
-
-// Testing if function is removing spaces
-assertArraysEqual(letterPositions("yo YO yo").y, [0, 2, 4]);
+module.exports = letterPositions;
