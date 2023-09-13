@@ -1,15 +1,4 @@
-// assertEqual function
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`\u2705 \u2705 \u2705 Assertion Passed: ${actual} === ${expected}`); // Used the Unicode representation for the green check
-  } else {
-    console.log(`\u274C \u274C \u274C Assertion Failed: ${actual} !== ${expected}`); // Used the Unicode representation for the red x
-  }
-};
-
 /* Goal: function which takes in an object and a value. It should scan the object and return the first key which contains the given value. If no key with that given value is found, then it should return undefined.*/
-
-/* Main question: How do I make the keys easy to loop through */
 
 /*
 * Strategy:
@@ -21,8 +10,6 @@ const assertEqual = function(actual, expected) {
 * 6) Test case using assertEqual to determine if correct genre is being returned
 */
 
-// findKeyByValue function !!!!
-
 const findKeyByValue = function(bestTVShowsByGenre, show) {
   let genres = Object.keys(bestTVShowsByGenre); /* makes keys of the object an array so information can be accessed */
   for (const genre of genres) { // loop through this array
@@ -33,14 +20,4 @@ const findKeyByValue = function(bestTVShowsByGenre, show) {
   return undefined; // if nothing then return undefined
 };
 
-// Test Code
-
-const bestTVShowsByGenre = {
-  sci_fi: "The Expanse",
-  comedy: "Brooklyn Nine-Nine",
-  drama:  "The Wire"
-};
-
-assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
-assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
-assertEqual(findKeyByValue(bestTVShowsByGenre, "The Expanse"), "sci_fi");
+module.exports = findKeyByValue;
